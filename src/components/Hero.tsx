@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Github,
   Linkedin,
@@ -37,6 +37,13 @@ export const Hero: React.FC<HeroProps> = ({ onCopyText, onOpenResume }) => {
     onCopyText(PERSONAL_INFO.phone, 'Phone number');
     setTimeout(() => setCopiedPhone(false), 2000);
   };
+
+  const roles = ['Backend Engineer', 'GenAI Agent Architect', 'Full-Stack Developer', 'Debugging Specialist', 'System Designer'];
+  const [roleIdx, setRoleIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setRoleIdx((i) => (i + 1) % roles.length), 2200);
+    return () => clearInterval(t);
+  }, []);
 
   const getSocialIcon = (name: string) => {
     switch (name) {
@@ -86,15 +93,32 @@ export const Hero: React.FC<HeroProps> = ({ onCopyText, onOpenResume }) => {
                   {PERSONAL_INFO.name}
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300">
-                {PERSONAL_INFO.headline}
+              <p className="text-lg sm:text-2xl font-semibold text-slate-700 dark:text-slate-300 h-9 overflow-hidden">
+                <span className="text-slate-500 dark:text-slate-500 font-mono">&gt; </span>
+                <span key={roleIdx} className="inline-block animate-roleIn bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
+                  {roles[roleIdx]}
+                </span>
+                <span className="inline-block w-[2px] h-6 align-middle ml-1 bg-cyan-400 animate-pulse" />
               </p>
+              <p className="text-sm sm:text-base font-medium text-slate-600 dark:text-slate-400">{PERSONAL_INFO.headline}</p>
             </div>
 
             {/* Tagline */}
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
               {PERSONAL_INFO.tagline}
             </p>
+
+            {/* Recruiter value statement */}
+            <div className="relative max-w-2xl rounded-2xl p-[1px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 animate-gradientShift bg-[length:200%_200%]">
+              <div className="rounded-2xl bg-white dark:bg-[#0b0f19] px-5 py-4">
+                <p className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white">
+                  Give me a target, and I'll ship it end to end.
+                </p>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  Backend, AI agents, frontend, databases, DevOps: one engineer covering the full stack, with production-grade quality and fast iteration.
+                </p>
+              </div>
+            </div>
 
             {/* Quick Contact & Copy Bar */}
             <div className="flex flex-wrap gap-2 pt-1 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
@@ -180,10 +204,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyText, onOpenResume }) => {
               <div className="relative rounded-2xl bg-white/95 dark:bg-[#0b0f19]/90 border border-slate-200 dark:border-white/15 backdrop-blur-xl p-6 overflow-hidden shadow-xl dark:shadow-2xl space-y-5">
                 
                 {/* Visual Header / Avatar */}
-                <div className="relative h-64 sm:h-72 rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-950">
+                <div className="relative h-72 sm:h-80 rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-950">
                   <img
-                    src="/src/assets/images/hero_ai_avatar_1790362335357.jpg"
-                    alt="Debangsu Misra AI Software Engineer Visual"
+                    src="/images/hero-engineer.jpg"
+                    alt="Engineer working on a laptop beside server racks"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
@@ -194,7 +218,7 @@ export const Hero: React.FC<HeroProps> = ({ onCopyText, onOpenResume }) => {
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs backdrop-blur-md bg-black/60 border border-white/15 px-3 py-2 rounded-lg text-slate-200">
                     <div className="flex items-center gap-2">
                       <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-                      <span className="font-mono">GenAI & Distributed Backend</span>
+                      <span className="font-mono">debugging · testing · shipping</span>
                     </div>
                     <span className="text-[11px] text-purple-300 font-mono">Lucknow, IN</span>
                   </div>

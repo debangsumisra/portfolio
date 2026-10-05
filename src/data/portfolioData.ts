@@ -57,36 +57,42 @@ export const EDUCATION_DATA: EducationData = {
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: 'GenAI & Agentic Systems',
+    image: '/images/genai.jpg',
     description: 'Autonomous multi-agent graphs, dense vector retrieval, and orchestration',
     skills: ['LangChain', 'LangGraph', 'RAG Pipelines', 'Prompt Engineering', 'Agentic Workflows'],
     color: 'purple',
   },
   {
     category: 'Backend & APIs',
+    image: '/images/backend.jpg',
     description: 'High-throughput enterprise services, microservices, and asynchronous pipelines',
     skills: ['Spring Boot', 'REST APIs', 'FastAPI', 'Flask', 'Pydantic'],
     color: 'cyan',
   },
   {
     category: 'Databases & Vector Stores',
+    image: '/images/sentinel.jpg',
     description: 'Relational persistence, vector embeddings, and search indexing',
     skills: ['PostgreSQL', 'MySQL', 'NeonDB', 'SQLAlchemy', 'FAISS', 'ChromaDB'],
     color: 'blue',
   },
   {
     category: 'Frontend Engineering',
+    image: '/images/frontend.jpg',
     description: 'Modern reactive interfaces, state architecture, and responsive styling',
     skills: ['React.js', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'Axios'],
     color: 'emerald',
   },
   {
     category: 'Languages',
+    image: '/images/languages.jpg',
     description: 'Strong foundation in object-oriented and functional systems programming',
     skills: ['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL'],
     color: 'amber',
   },
   {
     category: 'Tools & DevOps',
+    image: '/images/tools.jpg',
     description: 'Containerization, version control, CI/CD, and cloud hosting platforms',
     skills: ['Git', 'GitHub', 'Docker', 'Render', 'Vercel', 'Linux'],
     color: 'cyan',
@@ -107,7 +113,7 @@ export const PROJECTS: ProjectData[] = [
       'High-throughput asynchronous FastAPI backend providing live streaming of agent reasoning steps.',
     ],
     liveLink: 'https://autoresearch-agent.ai.studio',
-    image: '/src/assets/images/autoresearch_showcase_1790362351180.jpg',
+    image: '/images/autoresearch.jpg',
     featured: true,
     architectureHighlights: [
       'Stateful Cyclical Graphs: Implemented recursive validation loops that critique intermediate drafts before generating final outputs.',
@@ -128,7 +134,7 @@ export const PROJECTS: ProjectData[] = [
       'Optimized schema relationships and indexing in SQLAlchemy to handle concurrent trend spikes.',
     ],
     liveLink: 'https://trendysphere.netlify.app',
-    image: '/src/assets/images/trendsphere_showcase_1790362365343.jpg',
+    image: '/images/trendsphere.jpg',
     featured: true,
     architectureHighlights: [
       'Headless Automation: Configured resilient background tasks that bypass anti-bot challenges and extract structured entities.',
@@ -149,7 +155,7 @@ export const PROJECTS: ProjectData[] = [
       'Fast responsive React client with live debounced search, faceted filtering, and code snippet rendering.',
     ],
     liveLink: 'https://reposense-frontend-phi.vercel.app',
-    image: '/src/assets/images/reposense_showcase_1790362376527.jpg',
+    image: '/images/reposense.jpg',
     featured: false,
     architectureHighlights: [
       'GIN-Indexed Queries: Sub-50ms execution across tens of thousands of repository metadata rows.',
@@ -170,6 +176,7 @@ export const PROJECTS: ProjectData[] = [
       'Fine-grained token bucket rate limiting and strict Pydantic payload validation.',
     ],
     githubLink: 'https://github.com/debangsumisra/Token_balancing',
+    image: '/images/sentinel.jpg',
     featured: false,
     architectureHighlights: [
       'Circuit Breaker States: Closed, Half-Open, and Open state transitions based on rolling error rate windows.',
@@ -184,6 +191,7 @@ export const PROJECTS: ProjectData[] = [
     fullDesc: 'Graph-theoretic investigation of professional network clusters. Built network adjacency structures from connection datasets to identify influential connectors, high-centrality bridges, and community partitions.',
     category: 'Data & Analytics',
     techStack: ['Python', 'NetworkX', 'Pandas', 'Matplotlib', 'Graph Theory'],
+    image: '/images/graph.jpg',
     bulletPoints: [
       'Topological network modeling using NetworkX to compute Degree, Betweenness, and Eigenvector centralities.',
       'Identified cross-industry information brokers using bridge detection algorithms and Louvain modularity clustering.',
@@ -209,6 +217,7 @@ export const PROJECTS: ProjectData[] = [
       'Streamlined memory consumption and redundant API requests through intelligent caching.',
     ],
     githubLink: 'https://github.com/debangsumisra/Fancode_optimization',
+    image: '/images/fancode.jpg',
     featured: false,
     architectureHighlights: [
       'Algorithmic Refactoring: Replaced O(N^2) brute-force lookups with indexed hash maps and spatial spatial bounding.',

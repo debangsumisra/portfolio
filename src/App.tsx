@@ -8,6 +8,7 @@ import { Education } from './components/Education.tsx';
 import { AgentSimulator } from './components/AgentSimulator.tsx';
 import { ContactSection } from './components/ContactSection.tsx';
 import { Footer } from './components/Footer.tsx';
+import { WhyMe } from './components/WhyMe.tsx';
 import { ResumeModal } from './components/ResumeModal.tsx';
 import { Check } from 'lucide-react';
 
@@ -48,6 +49,8 @@ function PortfolioApp() {
           onOpenResume={() => setResumeModalOpen(true)}
         />
         
+        <WhyMe />
+
         <SkillsBento />
 
         <BentoProjects />

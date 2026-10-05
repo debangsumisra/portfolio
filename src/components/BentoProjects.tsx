@@ -77,11 +77,11 @@ export const BentoProjects: React.FC = () => {
                 <div>
                   {/* Image showcase for featured projects */}
                   {project.image && (
-                    <div className="relative mb-5 rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 h-48 sm:h-56 bg-slate-950 group-hover:border-cyan-500/30 transition-colors">
+                    <div className={`relative mb-5 rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 ${isFeatured ? 'h-48 sm:h-64' : 'h-40'} bg-slate-950 group-hover:border-cyan-500/30 transition-colors`}>
                       <img
                         src={project.image}
                         alt={`${project.title} Preview`}
-                        referrerPolicy="no-referrer"
+                        loading="lazy"
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 dark:from-[#0b0f19] via-transparent to-transparent opacity-80" />

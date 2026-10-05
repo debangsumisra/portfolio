@@ -47,3 +47,19 @@
   background: #334155;
 }
 
+
+/* Motion utilities */
+@keyframes roleIn { from { opacity: 0; transform: translateY(100%); } to { opacity: 1; transform: translateY(0); } }
+.animate-roleIn { animation: roleIn 0.45s cubic-bezier(.2,.8,.2,1); }
+@keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.animate-gradientShift { animation: gradientShift 6s ease infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-marquee { animation: marquee 30s linear infinite; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.animate-fadeIn { animation: fadeIn 0.25s ease; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-roleIn, .animate-gradientShift, .animate-marquee { animation: none; }
+  .reveal { opacity: 1; transform: none; }
+}

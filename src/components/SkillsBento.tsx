@@ -115,10 +115,22 @@ export const SkillsBento: React.FC = () => {
             return (
               <div
                 key={cat.category}
-                className={`group relative rounded-2xl bg-white dark:bg-[#0b0f19]/80 border border-slate-200 dark:border-white/10 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none ${getAccentBorderClass(
+                className={`group relative overflow-hidden rounded-2xl bg-white dark:bg-[#0b0f19]/80 border border-slate-200 dark:border-white/10 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-none ${getAccentBorderClass(
                   cat.color,
                 )}`}
               >
+                {cat.image && (
+                  <div className="relative -mx-6 -mt-6 mb-5 h-36 overflow-hidden">
+                    <img
+                      src={cat.image}
+                      alt={cat.category}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0b0f19] via-white/20 dark:via-[#0b0f19]/30 to-transparent" />
+                  </div>
+                )}
+
                 {/* Top ambient icon row */}
                 <div className="flex items-center justify-between gap-4 mb-3">
                   <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 group-hover:scale-105 transition-transform">

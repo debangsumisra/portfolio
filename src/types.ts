@@ -33,5 +33,6 @@ export interface SkillCategory {
   category: string;
   description: string;
   skills: string[];
+  image?: string;
   color: 'cyan' | 'purple' | 'emerald' | 'blue' | 'amber';
 }

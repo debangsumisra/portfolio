@@ -38,6 +38,16 @@ export const Education: React.FC = () => {
             {/* Ambient background blur */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-600/5 dark:bg-cyan-600/10 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-600/15 transition-all" />
 
+            <div className="relative -mx-6 -mt-6 sm:-mx-8 sm:-mt-8 mb-6 h-48 sm:h-56 overflow-hidden">
+              <img
+                src="/images/education.jpg"
+                alt="Computer science students collaborating on laptops"
+                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0b0f19] to-transparent" />
+            </div>
+
             <div className="relative z-10 space-y-6">
               
               {/* Header with Icon and Scholarship Spotlight */}
